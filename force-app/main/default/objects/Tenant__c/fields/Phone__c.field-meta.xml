@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField>
+    <fullName>Phone__c</fullName>
+    <type>Phone</type>
+    <inlineHelpText>Enter the Phone Number of the tenant.</inlineHelpText>
+    <required>true</required>
+    <description>Phone Number of the Tenant.</description>
+    <label>Phone</label>
+    <securityClassification>Public</securityClassification>
+</CustomField>

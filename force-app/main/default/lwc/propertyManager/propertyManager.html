@@ -1,0 +1,104 @@
+
+<template>
+    <lightning-card title="Properties" icon-name="standard:home">
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                    <lightning-combobox
+                        label="Availability"
+                        value={propertyStatus}
+                        options={statusOptions}
+                        onchange={handleStatusChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                    <lightning-combobox
+                        label="Furnishing"
+                        value={furnishingStatus}
+                        options={furnishingOptions}
+                        onchange={handleFurnishingChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                    <lightning-input
+                        type="number"
+                        label="Minimum rent"
+                        value={minRent}
+                        onchange={handleMinRentChange}>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                    <lightning-input
+                        type="number"
+                        label="Maximum rent"
+                        value={maxRent}
+                        onchange={handleMaxRentChange}>
+                    </lightning-input>
+                </div>
+            </div>
+
+            <div class="slds-m-top_medium">
+                <lightning-button
+                    label="Apply rent filters"
+                    variant="brand"
+                    onclick={applyFilters}>
+                </lightning-button>
+            </div>
+
+            <template lwc:if={loading}>
+                <lightning-spinner alternative-text="Loading properties">
+                </lightning-spinner>
+            </template>
+
+            <template lwc:if={error}>
+                <div class="slds-text-color_error slds-m-top_medium">
+                    {error}
+                </div>
+            </template>
+
+            <template lwc:if={properties.length}>
+                <div class="slds-m-top_medium">
+                    <template for:each={properties} for:item="property">
+                        <article
+                            key={property.Id}
+                            class="slds-box slds-m-bottom_small">
+                            <h2 class="slds-text-heading_small">
+                                {property.Name}
+                            </h2>
+                            <p>
+                                {property.Address__c}, {property.City__c},
+                                {property.State__c}, {property.Country__c}
+                            </p>
+                            <p>Type: {property.Property_Type__c}</p>
+                            <p>Status: {property.Status__c}</p>
+                            <!-- <p>Furnishing: {property.Furnishing_Status__c}</p> -->
+                            <p>Monthly rent: {property.Rent__c}</p>
+                            <!-- <p>{property.Description__c}</p> -->
+                        </article>
+                    </template>
+                </div>
+            </template>
+
+            <template lwc:if={loading}>
+                <!-- Results remain hidden while loading. -->
+            </template>
+            <template lwc:else>
+                <div class="slds-grid slds-grid_align-center slds-m-top_medium">
+                    <lightning-button
+                        label="Previous"
+                        onclick={previousPage}
+                        disabled={previousDisabled}>
+                    </lightning-button>
+                    <span class="slds-p-horizontal_medium">
+                        {pageLabel} ({totalRecords} records)
+                    </span>
+                    <lightning-button
+                        label="Next"
+                        onclick={nextPage}
+                        disabled={nextDisabled}>
+                    </lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

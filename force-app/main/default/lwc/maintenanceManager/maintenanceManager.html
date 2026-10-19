@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Create Maintenance Request" icon-name="standard:service_appointment">
+        <div class="slds-p-around_medium">
+            <lightning-combobox data-form="create" name="propertyId"
+                label="Property" value={propertyId} options={propertyOptions}
+                onchange={handleChange} required placeholder="Select a property">
+            </lightning-combobox>
+            <lightning-textarea data-form="create" name="description"
+                label="Maintenance Description" value={description}
+                onchange={handleChange} required>
+            </lightning-textarea>
+            <div class="slds-m-top_medium">
+                <lightning-button label="Create Request" variant="brand"
+                    onclick={handleCreate} disabled={saving}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Maintenance Requests" icon-name="standard:maintenance_plan">
+        <div class="slds-p-around_medium">
+            <template lwc:if={requests.length}>
+                <template for:each={requests} for:item="request">
+                    <div key={request.Id} class="slds-box slds-m-bottom_small">
+                        <p><strong>{request.Name}</strong> — {request.Property__r.Name}</p>
+                        <p>{request.Description__c}</p>
+                        <p>Assigned vendor: {request.Vendor__r.Name}</p>
+                        <div class="slds-m-top_small">
+                            <lightning-combobox
+                                label="Status"
+                                data-id={request.Id}
+                                value={request.Status__c}
+                                options={statusOptions}
+                                onchange={handleStatusChange}>
+                            </lightning-combobox>
+                        </div>
+                    </div>
+                </template>
+            </template>
+            <template lwc:else>
+                <p>No maintenance requests found.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

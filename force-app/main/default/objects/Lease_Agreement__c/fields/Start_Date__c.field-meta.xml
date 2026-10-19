@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField>
+    <fullName>Start_Date__c</fullName>
+    <type>Date</type>
+    <inlineHelpText>Enter the start date of the lease agreement.</inlineHelpText>
+    <required>true</required>
+    <description>Start Date of the Lease Agreement.</description>
+    <label>Start Date</label>
+    <securityClassification>Public</securityClassification>
+</CustomField>

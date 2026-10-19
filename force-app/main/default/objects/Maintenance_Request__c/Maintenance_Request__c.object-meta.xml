@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject>
+    <pluralLabel>Maintenance Requests</pluralLabel>
+    <fullName>Maintenance_Request__c</fullName>
+    <description>Tracks property maintenance issues, assigned vendors, descriptions, and request status.</description>
+    <nameField>
+        <label>Request Number</label>
+        <type>AutoNumber</type>
+        <displayFormat>MAINT-{00000}</displayFormat>
+    </nameField>
+    <enableHistory>true</enableHistory>
+    <enableActivities>true</enableActivities>
+    <enableSearch>true</enableSearch>
+    <enableFeeds>true</enableFeeds>
+    <enableReports>true</enableReports>
+    <enableBulkApi>true</enableBulkApi>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <sharingModel>ReadWrite</sharingModel>
+    <label>Maintenance Request</label>
+    <deploymentStatus>Deployed</deploymentStatus>
+</CustomObject>

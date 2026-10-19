@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Lease Document" icon-name="doctype:pdf">
+        <div class="slds-p-around_medium">
+            <template lwc:if={loading}>
+                <lightning-spinner alternative-text="Loading lease"></lightning-spinner>
+            </template>
+            <template lwc:elseif={lease}>
+                <p><strong>Lease:</strong> {lease.Name}</p>
+                <p><strong>Tenant:</strong> {lease.Tenant__r.Name}</p>
+                <p><strong>Property:</strong> {lease.Property__r.Name}</p>
+                <div class="slds-m-top_medium">
+                    <lightning-button
+                        label="Download Lease PDF"
+                        variant="brand"
+                        onclick={handleDownload}>
+                    </lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

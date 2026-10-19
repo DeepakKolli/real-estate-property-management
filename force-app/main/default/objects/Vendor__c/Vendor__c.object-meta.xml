@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject>
+    <pluralLabel>Vendors</pluralLabel>
+    <fullName>Vendor__c</fullName>
+    <description>Stores vendor contact information and supports maintenance assignment based on workload.</description>
+    <nameField>
+        <label>Vendor Name</label>
+        <type>Text</type>
+    </nameField>
+    <enableHistory>true</enableHistory>
+    <enableActivities>true</enableActivities>
+    <enableSearch>true</enableSearch>
+    <enableFeeds>true</enableFeeds>
+    <enableReports>true</enableReports>
+    <enableBulkApi>true</enableBulkApi>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <sharingModel>ReadWrite</sharingModel>
+    <label>Vendor</label>
+    <deploymentStatus>Deployed</deploymentStatus>
+</CustomObject>

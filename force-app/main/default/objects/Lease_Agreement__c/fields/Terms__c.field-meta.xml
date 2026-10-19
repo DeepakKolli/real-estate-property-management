@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField>
+    <fullName>Terms__c</fullName>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+    <length>131072</length>
+    <inlineHelpText>Enter the Terms and Conditions of the Lease Agreements.</inlineHelpText>
+    <description>Terms and conditions for the Lease Agreement.</description>
+    <label>Terms</label>
+    <securityClassification>Public</securityClassification>
+</CustomField>

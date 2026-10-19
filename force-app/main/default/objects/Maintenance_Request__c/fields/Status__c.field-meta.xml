@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CustomField>
+    <fullName>Status__c</fullName>
+    <type>Picklist</type>
+    <inlineHelpText>Select the maintenance request status.</inlineHelpText>
+    <required>true</required>
+    <description>Status of the maintenance request.</description>
+    <label>Status</label>
+    <valueSet>
+        <valueSetDefinition>
+            <value>
+                <fullName>Open</fullName>
+                <label>Open</label>
+                <default>true</default>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <label>In Progress</label>
+                <default>false</default>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <label>Completed</label>
+                <default>false</default>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <label>Cancelled</label>
+                <default>false</default>
+            </value>
+            <sorted>true</sorted>
+        </valueSetDefinition>
+    </valueSet>
+    <securityClassification>Public</securityClassification>
+</CustomField>

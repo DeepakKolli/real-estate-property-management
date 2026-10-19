@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField>
+    <fullName>End_Date__c</fullName>
+    <type>Date</type>
+    <inlineHelpText>Enter the end date of the lease agreement.</inlineHelpText>
+    <required>true</required>
+    <description>End date of the lease agreement.</description>
+    <label>End Date</label>
+    <securityClassification>Public</securityClassification>
+</CustomField>

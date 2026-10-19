@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title="Tenant Management" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <lightning-input data-section="tenant" name="tenantName" label="Tenant Name"
+                value={tenantName} onchange={handleChange} required></lightning-input>
+            <lightning-input data-section="tenant" name="phone" label="Phone" type="tel"
+                value={phone} onchange={handleChange} required></lightning-input>
+            <lightning-input data-section="tenant" name="email" label="Email" type="email"
+                value={email} onchange={handleChange} required></lightning-input>
+            <div class="slds-m-top_small">
+                <lightning-button label="Create Tenant" variant="brand"
+                    onclick={handleCreateTenant} disabled={saving}></lightning-button>
+            </div>
+
+            <div class="slds-m-top_large">
+                <h2 class="slds-text-heading_small">Tenants</h2>
+                <template lwc:if={tenants.length}>
+                    <template for:each={tenants} for:item="tenant">
+                        <div key={tenant.Id} class="slds-box slds-m-top_x-small">
+                            <strong>{tenant.Name}</strong>
+                            <div>{tenant.Phone__c} · {tenant.Email__c}</div>
+                        </div>
+                    </template>
+                </template>
+                <template lwc:else>
+                    <p class="slds-m-top_small">No tenants found.</p>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Create Lease Agreement" icon-name="standard:contract">
+        <div class="slds-p-around_medium">
+            <lightning-combobox data-section="lease" name="tenantId" label="Tenant"
+                value={tenantId} options={tenantOptions} onchange={handleChange}
+                required placeholder="Select a tenant"></lightning-combobox>
+            <lightning-combobox data-section="lease" name="propertyId" label="Available Property"
+                value={propertyId} options={propertyOptions} onchange={handleChange}
+                required placeholder="Select a property"></lightning-combobox>
+            <lightning-input data-section="lease" name="agreedRent" label="Agreed Monthly Rent"
+                type="number" min="0.01" step="0.01" value={agreedRent}
+                onchange={handleChange} required></lightning-input>
+            <lightning-input data-section="lease" name="startDate" label="Lease Start Date"
+                type="date" value={startDate} onchange={handleChange} required></lightning-input>
+            <lightning-input data-section="lease" name="endDate" label="Lease End Date"
+                type="date" value={endDate} onchange={handleChange} required></lightning-input>
+            <lightning-textarea data-section="lease" name="terms" label="Lease Terms"
+                value={terms} onchange={handleChange} required></lightning-textarea>
+            <div class="slds-m-top_medium">
+                <lightning-button label="Create Lease" variant="brand"
+                    onclick={handleCreateLease} disabled={saving}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

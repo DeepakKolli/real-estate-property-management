@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField>
+    <fullName>Agreed_Monthly_Rent__c</fullName>
+    <type>Currency</type>
+    <precision>18</precision>
+    <scale>0</scale>
+    <inlineHelpText>Enter the Agreed monthly rent of the property.</inlineHelpText>
+    <required>true</required>
+    <description>Agreed monthly rent for the property.</description>
+    <label>Agreed Monthly Rent</label>
+    <securityClassification>Public</securityClassification>
+</CustomField>

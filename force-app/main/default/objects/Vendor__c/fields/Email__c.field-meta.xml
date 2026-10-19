@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField>
+    <fullName>Email__c</fullName>
+    <type>Email</type>
+    <inlineHelpText>Enter the Email of the vendor.</inlineHelpText>
+    <required>true</required>
+    <description>Email of the Vendor.</description>
+    <label>Email</label>
+    <securityClassification>Public</securityClassification>
+</CustomField>

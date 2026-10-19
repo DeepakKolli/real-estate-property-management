@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject>
+    <pluralLabel>Lease Agreements</pluralLabel>
+    <fullName>Lease_Agreement__c</fullName>
+    <description>Stores lease terms, agreed monthly rent, start date, end date, tenant, and property details.</description>
+    <nameField>
+        <label>Lease Number</label>
+        <type>AutoNumber</type>
+        <displayFormat>LEASE-{00000}</displayFormat>
+    </nameField>
+    <enableHistory>true</enableHistory>
+    <enableActivities>true</enableActivities>
+    <enableSearch>true</enableSearch>
+    <enableFeeds>true</enableFeeds>
+    <enableReports>true</enableReports>
+    <enableBulkApi>true</enableBulkApi>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <sharingModel>ReadWrite</sharingModel>
+    <label>Lease Agreement</label>
+    <deploymentStatus>Deployed</deploymentStatus>
+</CustomObject>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject>
+    <pluralLabel>Tenants</pluralLabel>
+    <fullName>Tenant__c</fullName>
+    <description>Stores tenant contact information for tenants renting one or more properties.</description>
+    <nameField>
+        <label>Tenant Name</label>
+        <type>Text</type>
+    </nameField>
+    <enableHistory>true</enableHistory>
+    <enableActivities>true</enableActivities>
+    <enableSearch>true</enableSearch>
+    <enableFeeds>true</enableFeeds>
+    <enableReports>true</enableReports>
+    <enableBulkApi>true</enableBulkApi>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <sharingModel>ReadWrite</sharingModel>
+    <label>Tenant</label>
+    <deploymentStatus>Deployed</deploymentStatus>
+</CustomObject>
